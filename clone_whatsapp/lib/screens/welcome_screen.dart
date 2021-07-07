@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'call_screen.dart';
+import 'camera_screen.dart';
+import 'chat_screen.dart';
+import 'status_screen.dart';
+
 class WelcomeScreen extends StatefulWidget {
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
@@ -31,6 +36,15 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             Tab(text: 'Calls'),
           ],
         ),
+      ),
+      body: TabBarView(
+        controller: _tabController,
+        children: [
+          CameraScreen(),
+          ChatScreen(),
+          StatusScreen(),
+          CallsScreen(),
+        ],
       ),
     );
   }
